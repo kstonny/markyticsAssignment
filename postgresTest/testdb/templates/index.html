@@ -56,7 +56,7 @@
   
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
         </li>
@@ -80,7 +80,7 @@
               {% if request.user.username != '' %}
               <h6 class="collapse-header">Incidents:</h6>
               <a class="collapse-item" href="report-incident">Report an Incidents</a>
-              <a class="collapse-item" href="cards.html">Saved Incidents</a>
+              <a class="collapse-item" href="card">Saved Incidents</a>
               <a class="collapse-item" href="">send Incidents</a>
             {% else %}
             {% endif%}

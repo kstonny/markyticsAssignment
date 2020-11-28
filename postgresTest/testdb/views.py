@@ -48,7 +48,8 @@ def login_view(request):
             print("valid credentials")
             messages.error(request,"")
             
-           # return render(request, 'login.html')
+           # return render(request, 'login.html'
+            
             return redirect("index")
             
         else:
@@ -61,8 +62,13 @@ def login_view(request):
         return render(request, "login.html")
         
 
+
 def home_view(request):
     return render(request, 'home.html')
+
+def card(request):
+    saved_report = Reportform.objects.filter(submitted_user=request.user.username)
+    return render(request, 'card.html', {'saved_report': saved_report})
 
 def index(request):
     return render(request, 'index.html')
@@ -88,6 +94,7 @@ def report_incident(request):
         type_env = request.POST.get("type_env", False)
         type_inj = request.POST.get("type_inj", False)
         type_prop = request.POST.get("type_prop", False)
+        submitted_user = request.user.username
 
         if type_env == 'on':
             type_env = True
@@ -109,7 +116,7 @@ def report_incident(request):
         else:
             submitted = False
 
-        report = Reportform.objects.create(location_1=location_1, location_2=location_2, casue=casue, time=time, severity=severity, discription=discription,  action=action, submitted=submitted, reported_by=reported_by, date=date, type_env=type_env, type_inj=type_inj, type_prop=type_prop)
+        report = Reportform.objects.create(location_1=location_1, location_2=location_2, casue=casue, time=time, severity=severity, discription=discription,  action=action, submitted=submitted, reported_by=reported_by, date=date, type_env=type_env, type_inj=type_inj, type_prop=type_prop, submitted_user=submitted_user)
         
 
         report.save()

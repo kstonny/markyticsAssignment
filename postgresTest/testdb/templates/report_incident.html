@@ -56,7 +56,7 @@
   
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="/">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span class="mr-5">Dashboard</span></a>
         </li>
@@ -78,8 +78,8 @@
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
               <h6 class="collapse-header">Incidents:</h6>
-              <a class="collapse-item" href="buttons.html">Report an Incidents</a>
-              <a class="collapse-item" href="cards.html">Saved Incidents</a>
+              <a class="collapse-item" href="/report-incident">Report an Incidents</a>
+              <a class="collapse-item" href="/card">Saved Incidents</a>
               <a class="collapse-item" href="">send Incidents</a>
             </div>
           </div>
@@ -106,7 +106,7 @@
         <!-- Nav Item - Charts -->
         {% if request.user.username != '' %}
           <li class="nav-item">
-            <a class="nav-link" href="logout">
+            <a class="nav-link" href="/logout">
               <i class="fas fa-fw fa-chart-area"></i>
               <span class="mr-5">Logout</span></a>
           </li>

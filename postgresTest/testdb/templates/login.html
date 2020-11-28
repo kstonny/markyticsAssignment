@@ -77,10 +77,13 @@
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
+              {% if request.user.username != '' %}
               <h6 class="collapse-header">Incidents:</h6>
               <a class="collapse-item" href="buttons.html">Report an Incidents</a>
-              <a class="collapse-item" href="cards.html">Saved Incidents</a>
+              <a class="collapse-item" href="/card">Saved Incidents</a>
               <a class="collapse-item" href="">send Incidents</a>
+              {% else %}
+            {% endif%}
             </div>
           </div>
         </li>

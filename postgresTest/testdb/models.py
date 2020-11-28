@@ -16,4 +16,5 @@ class Reportform(models.Model):
     type_prop = models.BooleanField(default=False)
     submitted =  models.BooleanField(default=False)
     reported_by = models.CharField(max_length=80,blank=False, default='')
+    submitted_user = models.CharField(max_length=80,blank=False, default='')
 
